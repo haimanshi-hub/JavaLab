@@ -27,3 +27,46 @@ public class Calc {
 <img width="398" height="185" alt="image" src="https://github.com/user-attachments/assets/48ff84f1-ad7b-4c7e-a232-a4100538cfd6" />
 
 
+## code-3
+```
+import java.util.Scanner;
+
+public class DistanceAdd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int m1, c1, mm1;
+        int m2, c2, mm2;
+
+        System.out.println("Enter first distance (m cm mm):");
+        m1 = sc.nextInt();
+        c1 = sc.nextInt();
+        mm1 = sc.nextInt();
+
+        System.out.println("Enter second distance (m cm mm):");
+        m2 = sc.nextInt();
+        c2 = sc.nextInt();
+        mm2 = sc.nextInt();
+
+        int m = m1 + m2;
+        int cm = c1 + c2;
+        int mm = mm1 + mm2;
+
+        if (mm >= 10) {
+            cm = cm + mm / 10;
+            mm = mm % 10;
+        }
+
+        if (cm >= 100) {
+            m = m + cm / 100;
+            cm = cm % 100;
+        }
+
+        System.out.println("Total distance = " + m + " m " + cm + " cm " + mm + " mm");
+    }
+}
+```
+
+
+## code-4
+```
