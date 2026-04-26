@@ -2,6 +2,7 @@
 
 [Program 2: Write a Program in Java using OOPs concept for the addition of two distances where each distance is given in metres, centimetres, and millimeters.](#Program2)
 
+[Program 3: Write a Program to test for loop, while loop, do while loop. ](#Program3)
 
 
 ## Program1
@@ -72,6 +73,38 @@ public class DistanceAdd {
     }
 }
 ```
+<img width="343" height="272" alt="image" src="https://github.com/user-attachments/assets/f7de7c48-472d-4677-9b4c-34d968db9f5e" />
+
+## Program3
+```
+class LoopTest {
+    public static void main(String[] args) {
+
+        System.out.println("Using for loop:");
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(i);
+        }
+
+        System.out.println("\nUsing while loop:");
+        int j = 1;
+        while (j <= 5) {
+            System.out.println(j);
+            j++;
+        }
+
+        System.out.println("\nUsing do-while loop:");
+        int k = 1;
+        do {
+            System.out.println(k);
+            k++;
+        } while (k <= 5);
+    }
+}
+```
+<img width="388" height="532" alt="image" src="https://github.com/user-attachments/assets/94e18dc5-3541-4554-b705-ecb20a8c11bb" />
+
+
+
 
 
 
