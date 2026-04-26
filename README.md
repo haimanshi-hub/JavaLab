@@ -38,6 +38,23 @@
 
 [Program 16: Addition of 2 numbers using Swing.](#Program16)
 
+[Program 17:  Make one calculator in Swing.](#Program17)
+
+[Program 18:  Matrix Addition using swing class.](#Program18)
+
+[Program 19:  Create one JFrame with 10 buttons on it. After clicking on each button, a new structure is created (Circle, oval, rectangle, etc). ](#Program19)
+
+[Program 20:  Just using mouse events creates a frame like a paint brush with selection of colour and width.](#Program20)
+
+[Program 21:  Create a package of any 5 classes of your choice and import it.](#Program21)
+
+[Program 22:  Create one package and a sub-package, import and test it.](#Program22)
+
+
+
+
+
+
 
 
 
@@ -892,6 +909,551 @@ public class Main extends JFrame implements ActionListener {
 }
 ```
 <img width="588" height="392" alt="image" src="https://github.com/user-attachments/assets/4b9053b7-7480-4507-8bd5-45d2464b7c8e" /> 
+
+## Program17
+```
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Main extends JFrame implements ActionListener {
+    JLabel l1, l2, l3;
+    JTextField t1, t2, t3;
+    JButton b1, b2, b3, b4, b5;
+
+    Main() {
+        l1 = new JLabel("First Number:");
+        l2 = new JLabel("Second Number:");
+        l3 = new JLabel("Result:");
+
+        t1 = new JTextField();
+        t2 = new JTextField();
+        t3 = new JTextField();
+        t3.setEditable(false);
+
+        b1 = new JButton("Add");
+        b2 = new JButton("Sub");
+        b3 = new JButton("Mul");
+        b4 = new JButton("Div");
+        b5 = new JButton("Clear");
+
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+        b4.addActionListener(this);
+        b5.addActionListener(this);
+
+        l1.setBounds(50, 50, 100, 30);
+        t1.setBounds(170, 50, 150, 30);
+
+        l2.setBounds(50, 100, 100, 30);
+        t2.setBounds(170, 100, 150, 30);
+
+        l3.setBounds(50, 150, 100, 30);
+        t3.setBounds(170, 150, 150, 30);
+
+        b1.setBounds(30, 220, 70, 30);
+        b2.setBounds(110, 220, 70, 30);
+        b3.setBounds(190, 220, 70, 30);
+        b4.setBounds(270, 220, 70, 30);
+        b5.setBounds(150, 270, 80, 30);
+
+        add(l1); add(t1);
+        add(l2); add(t2);
+        add(l3); add(t3);
+        add(b1); add(b2); add(b3); add(b4); add(b5);
+
+        setTitle("Calculator Using Swing");
+        setSize(400, 380);
+        setLayout(null);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        try {
+            double num1 = Double.parseDouble(t1.getText());
+            double num2 = Double.parseDouble(t2.getText());
+            double result = 0;
+
+            if (e.getSource() == b1) {
+                result = num1 + num2;
+            } else if (e.getSource() == b2) {
+                result = num1 - num2;
+            } else if (e.getSource() == b3) {
+                result = num1 * num2;
+            } else if (e.getSource() == b4) {
+                if (num2 == 0) {
+                    JOptionPane.showMessageDialog(this, "Division by zero is not allowed");
+                    return;
+                }
+                result = num1 / num2;
+            } else if (e.getSource() == b5) {
+                t1.setText("");
+                t2.setText("");
+                t3.setText("");
+                return;
+            }
+
+            t3.setText(String.valueOf(result));
+
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "Please enter valid numbers");
+        }
+    }
+
+    public static void main(String[] args) {
+        new Main();
+    }
+}
+```
+<img width="615" height="567" alt="image" src="https://github.com/user-attachments/assets/d895f3db-086d-40f7-a792-7792c9f38f6c" />
+
+## program18
+```
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Main extends JFrame implements ActionListener {
+
+    JTextField a11, a12, a21, a22;
+    JTextField b11, b12, b21, b22;
+    JTextField r11, r12, r21, r22;
+    JButton addBtn, clearBtn;
+
+    Main() {
+        setTitle("Matrix Addition (2x2)");
+        setSize(420, 320);
+        setLayout(null);
+
+        JLabel la = new JLabel("Matrix A");
+        la.setBounds(60, 10, 100, 20);
+        add(la);
+
+        a11 = new JTextField(); a11.setBounds(40, 40, 50, 30);
+        a12 = new JTextField(); a12.setBounds(100, 40, 50, 30);
+        a21 = new JTextField(); a21.setBounds(40, 80, 50, 30);
+        a22 = new JTextField(); a22.setBounds(100, 80, 50, 30);
+
+        JLabel lb = new JLabel("Matrix B");
+        lb.setBounds(250, 10, 100, 20);
+        add(lb);
+
+        b11 = new JTextField(); b11.setBounds(230, 40, 50, 30);
+        b12 = new JTextField(); b12.setBounds(290, 40, 50, 30);
+        b21 = new JTextField(); b21.setBounds(230, 80, 50, 30);
+        b22 = new JTextField(); b22.setBounds(290, 80, 50, 30);
+
+        JLabel lr = new JLabel("Result");
+        lr.setBounds(150, 120, 100, 20);
+        add(lr);
+
+        r11 = new JTextField(); r11.setBounds(120, 150, 50, 30); r11.setEditable(false);
+        r12 = new JTextField(); r12.setBounds(180, 150, 50, 30); r12.setEditable(false);
+        r21 = new JTextField(); r21.setBounds(120, 190, 50, 30); r21.setEditable(false);
+        r22 = new JTextField(); r22.setBounds(180, 190, 50, 30); r22.setEditable(false);
+
+        addBtn = new JButton("Add");
+        clearBtn = new JButton("Clear");
+        addBtn.setBounds(90, 240, 80, 30);
+        clearBtn.setBounds(200, 240, 80, 30);
+
+        addBtn.addActionListener(this);
+        clearBtn.addActionListener(this);
+
+        add(a11); add(a12); add(a21); add(a22);
+        add(b11); add(b12); add(b21); add(b22);
+        add(r11); add(r12); add(r21); add(r22);
+        add(addBtn); add(clearBtn);
+
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == addBtn) {
+            try {
+                int A11 = Integer.parseInt(a11.getText());
+                int A12 = Integer.parseInt(a12.getText());
+                int A21 = Integer.parseInt(a21.getText());
+                int A22 = Integer.parseInt(a22.getText());
+
+                int B11 = Integer.parseInt(b11.getText());
+                int B12 = Integer.parseInt(b12.getText());
+                int B21 = Integer.parseInt(b21.getText());
+                int B22 = Integer.parseInt(b22.getText());
+
+                r11.setText(String.valueOf(A11 + B11));
+                r12.setText(String.valueOf(A12 + B12));
+                r21.setText(String.valueOf(A21 + B21));
+                r22.setText(String.valueOf(A22 + B22));
+
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(this, "Enter valid integers");
+            }
+        }
+
+        if (e.getSource() == clearBtn) {
+            JTextField[] fields = {
+                a11,a12,a21,a22, b11,b12,b21,b22, r11,r12,r21,r22
+            };
+            for (JTextField f: fields) f.setText("");
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new Main());
+    }
+}
+
+```
+
+<img width="514" height="394" alt="image" src="https://github.com/user-attachments/assets/bba719ab-60c3-4a54-955b-358a772f20cd" />
+
+## Program19
+```
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class ShapePanel extends JPanel {
+    String shape = "";
+
+    public void setShape(String shape) {
+        this.shape = shape;
+        repaint();
+    }
+
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        if (shape.equals("Line")) {
+            g.drawLine(50, 50, 200, 50);
+        } 
+        else if (shape.equals("Rectangle")) {
+            g.drawRect(50, 50, 120, 80);
+        } 
+        else if (shape.equals("Square")) {
+            g.drawRect(50, 50, 100, 100);
+        } 
+        else if (shape.equals("Oval")) {
+            g.drawOval(50, 50, 150, 100);
+        } 
+        else if (shape.equals("Circle")) {
+            g.drawOval(50, 50, 100, 100);
+        } 
+        else if (shape.equals("RoundRect")) {
+            g.drawRoundRect(50, 50, 150, 100, 30, 30);
+        } 
+        else if (shape.equals("Arc")) {
+            g.drawArc(50, 50, 150, 100, 0, 180);
+        } 
+        else if (shape.equals("Triangle")) {
+            int x[] = {100, 50, 150};
+            int y[] = {50, 150, 150};
+            g.drawPolygon(x, y, 3);
+        } 
+        else if (shape.equals("Polygon")) {
+            int x[] = {100, 150, 130, 70, 50};
+            int y[] = {50, 90, 150, 150, 90};
+            g.drawPolygon(x, y, 5);
+        } 
+        else if (shape.equals("Clear")) {
+        }
+    }
+}
+
+public class Main extends JFrame implements ActionListener {
+    JButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b10;
+    ShapePanel panel;
+
+    Main() {
+        setTitle("Shapes using 10 Buttons");
+        setSize(700, 500);
+        setLayout(null);
+
+        panel = new ShapePanel();
+        panel.setBounds(200, 30, 450, 400);
+        panel.setBackground(Color.WHITE);
+
+        b1 = new JButton("Line");
+        b2 = new JButton("Rectangle");
+        b3 = new JButton("Square");
+        b4 = new JButton("Oval");
+        b5 = new JButton("Circle");
+        b6 = new JButton("RoundRect");
+        b7 = new JButton("Arc");
+        b8 = new JButton("Triangle");
+        b9 = new JButton("Polygon");
+        b10 = new JButton("Clear");
+
+        JButton[] buttons = {b1, b2, b3, b4, b5, b6, b7, b8, b9, b10};
+
+        int y = 30;
+        for (JButton b: buttons) {
+            b.setBounds(30, y, 130, 30);
+            b.addActionListener(this);
+            add(b);
+            y += 35;
+        }
+
+        add(panel);
+
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        String cmd = e.getActionCommand();
+        panel.setShape(cmd);
+    }
+
+    public static void main(String[] args) {
+        new Main();
+    }
+}
+```
+<img width="1012" height="710" alt="image" src="https://github.com/user-attachments/assets/51896231-7b81-4ea8-8e76-3f2ed986b762" />
+
+## Program20
+```
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+
+class DrawPoint {
+    int x, y, size;
+    Color color;
+
+    DrawPoint(int x, int y, Color color, int size) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.size = size;
+    }
+}
+
+class PaintPanel extends JPanel implements MouseMotionListener {
+    ArrayList<DrawPoint> points = new ArrayList<>();
+    Color currentColor = Color.BLACK;
+    int brushSize = 5;
+
+    PaintPanel() {
+        setBackground(Color.WHITE);
+        addMouseMotionListener(this);
+    }
+
+    public void setCurrentColor(Color c) {
+        currentColor = c;
+    }
+
+    public void setBrushSize(int size) {
+        brushSize = size;
+    }
+
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        for (DrawPoint p: points) {
+            g.setColor(p.color);
+            g.fillOval(p.x, p.y, p.size, p.size);
+        }
+    }
+
+    public void mouseDragged(MouseEvent e) {
+        points.add(new DrawPoint(e.getX(), e.getY(), currentColor, brushSize));
+        repaint();
+    }
+
+    public void mouseMoved(MouseEvent e) {
+    }
+
+    public void clearCanvas() {
+        points.clear();
+        repaint();
+    }
+}
+
+//Main
+
+public class Main extends JFrame implements ActionListener {
+    JButton redBtn, blueBtn, greenBtn, blackBtn, clearBtn;
+    JComboBox<String> widthBox;
+    PaintPanel panel;
+
+    Main() {
+        setTitle("Paint Brush Program");
+        setSize(800, 600);
+        setLayout(null);
+
+        redBtn = new JButton("Red");
+        blueBtn = new JButton("Blue");
+        greenBtn = new JButton("Green");
+        blackBtn = new JButton("Black");
+        clearBtn = new JButton("Clear");
+
+        String widths[] = {"5", "10", "15", "20", "25"};
+        widthBox = new JComboBox<>(widths);
+
+        redBtn.setBounds(20, 20, 80, 30);
+        blueBtn.setBounds(110, 20, 80, 30);
+        greenBtn.setBounds(200, 20, 80, 30);
+        blackBtn.setBounds(290, 20, 80, 30);
+        clearBtn.setBounds(380, 20, 80, 30);
+        widthBox.setBounds(480, 20, 80, 30);
+
+        redBtn.addActionListener(this);
+        blueBtn.addActionListener(this);
+        greenBtn.addActionListener(this);
+        blackBtn.addActionListener(this);
+        clearBtn.addActionListener(this);
+        widthBox.addActionListener(this);
+
+        add(redBtn);
+        add(blueBtn);
+        add(greenBtn);
+        add(blackBtn);
+        add(clearBtn);
+        add(widthBox);
+
+        panel = new PaintPanel();
+        panel.setBounds(20, 70, 740, 470);
+        add(panel);
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == redBtn) {
+            panel.setCurrentColor(Color.RED);
+        } else if (e.getSource() == blueBtn) {
+            panel.setCurrentColor(Color.BLUE);
+        } else if (e.getSource() == greenBtn) {
+            panel.setCurrentColor(Color.GREEN);
+        } else if (e.getSource() == blackBtn) {
+            panel.setCurrentColor(Color.BLACK);
+        } else if (e.getSource() == clearBtn) {
+            panel.clearCanvas();
+        } else if (e.getSource() == widthBox) {
+            int size = Integer.parseInt((String) widthBox.getSelectedItem());
+            panel.setBrushSize(size);
+        }
+    }
+
+    public static void main(String[] args) {
+        new Main();
+    }
+}
+```
+<img width="1228" height="755" alt="image" src="https://github.com/user-attachments/assets/2acc7dea-b38f-4ace-b845-7ccea2e1ed4d" />
+
+## Program21
+```
+package mypack;
+
+public class Add {
+    public int sum(int a, int b) {
+        return a + b;
+    }
+}
+package mypack;
+
+public class Sub {
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+}
+package mypack;
+
+public class Mul {
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+}
+package mypack;
+
+public class Div {
+    public int divide(int a, int b) {
+        return a / b;
+    }
+}
+package mypack;
+
+public class Square {
+    public int square(int a) {
+        return a * a;
+    }
+}
+
+//Main Method
+
+import mypack.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Add a = new Add();
+        Sub s = new Sub();
+        Mul m = new Mul();
+        Div d = new Div();
+        Square sq = new Square();
+
+        System.out.println("Addition: " + a.sum(10, 5));
+        System.out.println("Subtraction: " + s.subtract(10, 5));
+        System.out.println("Multiplication: " + m.multiply(10, 5));
+        System.out.println("Division: " + d.divide(10, 5));
+        System.out.println("Square: " + sq.square(5));
+    }
+}
+```
+
+<img width="197" height="131" alt="image" src="https://github.com/user-attachments/assets/b77abf75-198f-419b-8912-c61c9941f0b4" />
+
+
+## Program22
+```
+package mypack;
+
+public class Add {
+    public int sum(int a, int b) {
+        return a + b;
+    }
+}
+package mypack.subpack;
+
+public class Square {
+    public int square(int a) {
+        return a * a;
+    }
+}
+import mypack.Add;
+import mypack.subpack.Square;
+
+//Main
+
+public class Main {
+    public static void main(String[] args) {
+
+        Add a = new Add();
+        Square s = new Square();
+
+        System.out.println("Addition: " + a.sum(10, 5));
+        System.out.println("Square: " + s.square(5));
+    }
+}
+```
+<img width="117" height="53" alt="image" src="https://github.com/user-attachments/assets/b9ec9ad4-bb00-46e8-abf2-1e1d05658405" />
+
+## Program23
+```
+
+
+
+
+
+
+
+
 
 
 
