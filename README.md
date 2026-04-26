@@ -6,6 +6,10 @@
 
 [Program 4: Write a Program using if-else to print the grade of input marks.](#Program4)
 
+[Program 5: Write a Program in Java using objects and classes to get the square of stars for dynamic width and height.](#Program5)
+
+
+
 
 
 ## Program1
@@ -134,6 +138,41 @@ class GradeCheck {
 }
 ```
 <img width="300" height="182" alt="image" src="https://github.com/user-attachments/assets/9fd034f4-22e3-4f9d-ac94-f10384092e1f" />
+
+##Program4
+```
+import java.util.Scanner;
+
+class SquareStars {
+
+    int width, height;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter width: ");
+        width = sc.nextInt();
+        System.out.print("Enter height: ");
+        height = sc.nextInt();
+    }
+
+    void printSquare() {
+        for (int i = 1; i <= height; i++) {
+            for (int j = 1; j <= width; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        SquareStars obj = new SquareStars();
+        obj.input();
+        obj.printSquare();
+    }
+}
+```
+<img width="302" height="327" alt="image" src="https://github.com/user-attachments/assets/d3041af1-5dec-4a2a-bacb-336309c2370a" />
+
 
 
 
