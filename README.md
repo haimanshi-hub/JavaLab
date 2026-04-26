@@ -50,6 +50,20 @@
 
 [Program 22:  Create one package and a sub-package, import and test it.](#Program22)
 
+[Program 23:  Create one small array of size 5, apply array out of bounds exception using try-catch, give a proper message in catch, and demonstrate the exception exactly in the same fashion. 
+Demonstrate arithmetic exception also. ](#Program23)
+
+[Program 24:  To test the range of age of one student, write a program using a user-defined exception.](#Program24)
+
+[Program 25: File Handling Programs (given in the PPT).](#Program25)
+
+[Program 26:  Inheritance Programs, using interface and abstract classes.](#Program26)
+
+
+
+
+
+
 
 
 
@@ -1446,6 +1460,174 @@ public class Main {
 
 ## Program23
 ```
+public class Main {
+    public static void main(String[] args) {
+
+        try {
+            int arr[] = new int[5];
+
+            arr[0] = 10;
+            arr[1] = 20;
+            arr[2] = 30;
+            arr[3] = 40;
+            arr[4] = 50;
+
+            System.out.println("Accessing array elements:");
+            for (int i = 0; i <= 5; i++) {  
+                System.out.println("Element at index " + i + " = " + arr[i]);
+            }
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System. out.println("Array Index Out Of Bounds Exception caught!");
+            System. out.println("You tried to access an invalid index in the array.");
+        }
+
+        try {
+            int a = 10;
+            int b = 0;
+
+            int result = a / b;  
+            System.out.println("Result = " + result);
+
+        } catch (ArithmeticException e) {
+            System. out.println("Arithmetic Exception caught!");
+            System. out.println("Division by zero is not allowed.");
+        }
+
+        System.out.println("Program continues after handling exceptions.");
+    }
+}
+```
+<img width="452" height="291" alt="image" src="https://github.com/user-attachments/assets/4879c69b-d826-4c32-b2e5-215b544e82f1" />
+
+## Program24
+```
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+public class Main {
+
+    static void checkAge(int age) throws InvalidAgeException {
+        if (age < 18 || age > 25) {
+            throw new InvalidAgeException("Age must be between 18 and 25.");
+        } else {
+            System. out.println("Valid age. Student allowed.");
+        }
+    }
+
+    public static void main(String[] args) {
+
+        int age = 16;  
+
+        try {
+            checkAge(age);
+        } catch (InvalidAgeException e) {
+            System. out.println("Exception caught: " + e.getMessage());
+        }
+
+        System.out.println("Program continues...");
+    }
+}
+```
+<img width="490" height="138" alt="image" src="https://github.com/user-attachments/assets/d4ea12d6-9e35-4375-b4b3-2e9d48410422" />
+
+## Program25
+```
+//Character-by-Character
+
+import java.io.*;
+
+public class CharFileCopy {
+    public static void main(String[] args) {
+        try {
+            FileReader fr = new FileReader("source.txt");
+            FileWriter fw = new FileWriter("dest_char.txt");
+
+            int ch;
+
+            while ((ch = fr.read()) != -1) {
+                fw.write(ch);
+            }
+
+            fr.close();
+            fw.close();
+
+            System. out.println("File copied using character stream");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+
+//Byte-by-Byte
+
+import java.io.*;
+
+public class ByteFileCopy {
+    public static void main(String[] args) {
+        try {
+            FileInputStream fis = new FileInputStream("source.txt");
+            FileOutputStream fos = new FileOutputStream("dest_byte.txt");
+
+            int b;
+
+            while ((b = fis.read()) != -1) {
+                fos.write(b);
+            }
+
+            fis.close();
+            fos.close();
+
+            System. out.println("File copied using byte stream");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+<img width="596" height="638" alt="image" src="https://github.com/user-attachments/assets/6959fe80-f151-4c91-9eeb-a3d1471608ea" />
+
+## Program26
+```
+interface Printer {
+    void print();
+}
+
+abstract class Device {
+    abstract void start();
+
+    void stop() {
+        System.out.println("Device stopped");
+    }
+}
+
+class Computer extends Device implements Printer {
+    void start() {
+        System. out.println("Computer started");
+    }
+
+    public void print() {
+        System.out.println("Printing from computer");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Computer c = new Computer();
+        c.start();
+        c.print();
+        c.stop();
+    }
+}
+```
+<img width="243" height="157" alt="image" src="https://github.com/user-attachments/assets/c5a922d3-bc7b-44ec-9554-83774dc28bad" />
+
+
+
+
 
 
 
