@@ -8,6 +8,9 @@
 
 [Program 5: Write a Program in Java using objects and classes to get the square of stars for dynamic width and height.](#Program5)
 
+[Program 6: Write a Program in Java using objects and classes to get the pyramid of stars or triangle of stars.](#Program6)
+
+
 
 
 
@@ -110,7 +113,7 @@ class LoopTest {
 ```
 <img width="388" height="532" alt="image" src="https://github.com/user-attachments/assets/94e18dc5-3541-4554-b705-ecb20a8c11bb" />
 
-##Program4
+## Program4
 ```
 import java.util.Scanner;
 
@@ -139,7 +142,7 @@ class GradeCheck {
 ```
 <img width="300" height="182" alt="image" src="https://github.com/user-attachments/assets/9fd034f4-22e3-4f9d-ac94-f10384092e1f" />
 
-##Program4
+## Program5
 ```
 import java.util.Scanner;
 
@@ -172,6 +175,45 @@ class SquareStars {
 }
 ```
 <img width="302" height="327" alt="image" src="https://github.com/user-attachments/assets/d3041af1-5dec-4a2a-bacb-336309c2370a" />
+
+## Program6
+```
+import java.util.Scanner;
+
+class PyramidStars {
+
+    int n;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of rows: ");
+        n = sc.nextInt();
+    }
+
+    void printPyramid() {
+        for (int i = 1; i <= n; i++) {
+
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" ");
+            }
+
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        PyramidStars obj = new PyramidStars();
+        obj.input();
+        obj.printPyramid();
+    }
+}
+```
+<img width="327" height="185" alt="image" src="https://github.com/user-attachments/assets/0a1e4534-c13a-427b-8ca4-36593a39f67f" />
+
 
 
 
