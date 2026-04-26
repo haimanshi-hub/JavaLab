@@ -28,6 +28,10 @@
 
 [Program 12d:  Collect the code from the internet for any five programs of the C language and convert them to Java. (Fibonacci).](#Program12d)
 
+[Program 12e:  Collect the code from the internet for any five programs of the C language and convert them to Java. (Pattern).](#Program12e)
+
+
+
 
 
 
@@ -650,6 +654,23 @@ class Fibonacci {
 }
 ```
 <img width="302" height="137" alt="image" src="https://github.com/user-attachments/assets/76bfb919-1d62-4249-88a2-b6d96417f839" />
+
+## Pattern12e
+```
+class Pattern {
+    public static void main(String[] args) {
+
+        for (int i = 1; i <= 5; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+<img width="303" height="176" alt="image" src="https://github.com/user-attachments/assets/d02bbfe4-08f5-4adf-81b6-7fcfed0228d3" />
+
 
 
 
