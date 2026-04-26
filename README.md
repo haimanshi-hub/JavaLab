@@ -36,6 +36,9 @@
 
 [Program 15:  Using the concept of multithreading, the output of all three threads must be synchronised (use the join method).](#Program15)
 
+[Program 16: Addition of 2 numbers using Swing.](#Program16)
+
+
 
 
 
@@ -829,6 +832,69 @@ public class Main {
 }
 ```
 <img width="1141" height="582" alt="image" src="https://github.com/user-attachments/assets/b82efa29-d204-4ac8-b6ba-b3cc20584524" />
+
+## Program16
+```
+import javax.swing.*;
+import java.awt.event.*;
+
+public class Main extends JFrame implements ActionListener {
+    JLabel l1, l2, l3;
+    JTextField t1, t2, t3;
+    JButton b1;
+
+    Main() {
+        l1 = new JLabel("Enter First Number:");
+        l2 = new JLabel("Enter Second Number:");
+        l3 = new JLabel("Result:");
+
+        t1 = new JTextField();
+        t2 = new JTextField();
+        t3 = new JTextField();
+        t3.setEditable(false);
+
+        b1 = new JButton("Add");
+        b1.addActionListener(this);
+
+        l1.setBounds(50, 50, 150, 30);
+        t1.setBounds(200, 50, 150, 30);
+
+        l2.setBounds(50, 100, 150, 30);
+        t2.setBounds(200, 100, 150, 30);
+
+        l3.setBounds(50, 150, 150, 30);
+        t3.setBounds(200, 150, 150, 30);
+
+        b1.setBounds(140, 220, 100, 30);
+
+        add(l1); add(t1);
+        add(l2); add(t2);
+        add(l3); add(t3);
+        add(b1);
+
+        setTitle("Addition of Two Numbers");
+        setSize(450, 350);
+        setLayout(null);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        int num1 = Integer.parseInt(t1.getText());
+        int num2 = Integer.parseInt(t2.getText());
+        int sum = num1 + num2;
+        t3.setText(String.valueOf(sum));
+    }
+
+    public static void main(String[] args) {
+        new Main();
+    }
+}
+```
+<img width="588" height="392" alt="image" src="https://github.com/user-attachments/assets/4b9053b7-7480-4507-8bd5-45d2464b7c8e" /> 
+
+
+
 
 
 
