@@ -22,6 +22,9 @@
 
 [Program 12a:  Collect the code from the internet for any five programs in the C language and convert them to Java. (Factorial).](#Program12a)
 
+[Program 12b:  Collect the code from the internet for any five programs of the C language and convert them to Java. (Armstrong).](#Program12b)
+
+
 
 
 
@@ -557,6 +560,36 @@ class Factorial {
 }
 ```
 <img width="311" height="111" alt="image" src="https://github.com/user-attachments/assets/be71dcde-8ddd-4885-acb0-b2a9f2a25d22" />
+
+## Program12b
+```
+import java.util.Scanner;
+
+class Armstrong {
+    public static void main(String[] args) {
+        int n, temp, rem, sum = 0;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        n = sc.nextInt();
+
+        temp = n;
+
+        while (n > 0) {
+            rem = n % 10;
+            sum += rem * rem * rem;
+            n = n / 10;
+        }
+
+        if (temp == sum)
+            System. out.println("Armstrong Number");
+        else
+            System. out.println("Not an Armstrong Number");
+    }
+}
+```
+<img width="296" height="145" alt="image" src="https://github.com/user-attachments/assets/52eafa4d-52d7-4095-a4ad-dd09b3f57dd0" />
+
 
 
 
