@@ -14,6 +14,10 @@
 
 [Program 8: Write a Program in Java using OOPs concept for the addition of two times, where each time is given in hours and minutes.](#Program8)
 
+[Program 9: Write a Program in Java using OOPs concept for the addition of two times, where each time is given in hours, minutes, and seconds.](#Program9)
+
+
+
 
 
 
@@ -313,6 +317,62 @@ class Time {
 }
 ```
 <img width="441" height="262" alt="image" src="https://github.com/user-attachments/assets/7a427628-7a52-4947-94cb-69b2a0973497" />
+
+## Program9
+```
+import java.util.Scanner;
+
+class Time {
+    int hours;
+    int minutes;
+    int seconds;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter hours: ");
+        hours = sc.nextInt();
+        System.out.print("Enter minutes: ");
+        minutes = sc.nextInt();
+        System.out.print("Enter seconds: ");
+        seconds = sc.nextInt();
+    }
+
+    Time add(Time t) {
+        Time sum = new Time();
+
+        sum.seconds = this.seconds + t.seconds;
+        sum.minutes = this.minutes + t.minutes + sum.seconds / 60;
+        sum.seconds = sum.seconds % 60;
+
+        sum.hours = this.hours + t.hours + sum.minutes / 60;
+        sum.minutes = sum.minutes % 60;
+
+        return sum;
+    }
+
+    void display() {
+        System.out.println("Time = " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds");
+    }
+
+    public static void main(String[] args) {
+        Time t1 = new Time();
+        Time t2 = new Time();
+
+        System.out.println("Enter first time:");
+        t1.input();
+
+        System.out.println("Enter second time:");
+        t2.input();
+
+        Time sum = t1.add(t2);
+
+        System.out.print("Sum of times: ");
+        sum.display();
+    }
+}
+```
+<img width="547" height="320" alt="image" src="https://github.com/user-attachments/assets/bc3fa835-4515-43b0-964f-f069bd6dbf85" />
+
 
 
 
