@@ -16,6 +16,9 @@
 
 [Program 9: Write a Program in Java using OOPs concept for the addition of two times, where each time is given in hours, minutes, and seconds.](#Program9)
 
+[Program 10: Write a class with four methods for a 1-dimensional array.(Input, output 1,out2, reverse).](#Program10)
+
+
 
 
 
@@ -372,6 +375,65 @@ class Time {
 }
 ```
 <img width="547" height="320" alt="image" src="https://github.com/user-attachments/assets/bc3fa835-4515-43b0-964f-f069bd6dbf85" />
+
+## Program10
+```
+import java.util.Scanner;
+
+class OneDArray {
+    int arr[];
+    int n;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System. out.print("Enter size of array: ");
+        n = sc.nextInt();
+
+        arr = new int[n];
+        System.out.println("Enter elements:");
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+    }
+
+    void output1() {
+        System.out.println("Array elements:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    void output2() {
+        System.out.println("Even elements:");
+        for (int i = 0; i < n; i++) {
+            if (arr[i] % 2 == 0) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+        System.out.println();
+    }
+
+    void reverse() {
+        System.out.println("Reversed array:");
+        for (int i = n - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        OneDArray obj = new OneDArray();
+        obj.input();
+        obj.output1();
+        obj.output2();
+        obj.reverse();
+    }
+}
+```
+<img width="286" height="327" alt="image" src="https://github.com/user-attachments/assets/afc8b620-5a04-4022-b1b6-045f284a409b" />
+
 
 
 
