@@ -20,6 +20,9 @@
 
 [Program 11:  Write a class with multiple methods to perform matrix operations (transpose, addition, sum of rows, sum of columns, sum of diagonal).](#Program11)
 
+[Program 12a:  Collect the code from the internet for any five programs in the C language and convert them to Java. (Factorial).](#Program12a)
+
+
 
 
 
@@ -532,6 +535,29 @@ class MatrixOperations {
 }
 ```
 <img width="623" height="762" alt="image" src="https://github.com/user-attachments/assets/c02dd76f-9477-4e05-bc80-d529f74b1219" />
+
+## Program12a
+```
+import java.util.Scanner;
+
+class Factorial {
+    public static void main(String[] args) {
+        int n, fact = 1;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        n = sc.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+
+        System.out.println("Factorial = " + fact);
+    }
+}
+```
+<img width="311" height="111" alt="image" src="https://github.com/user-attachments/assets/be71dcde-8ddd-4885-acb0-b2a9f2a25d22" />
+
 
 
 
