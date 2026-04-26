@@ -24,6 +24,9 @@
 
 [Program 12b:  Collect the code from the internet for any five programs of the C language and convert them to Java. (Armstrong).](#Program12b)
 
+[Program 12c:  Collect the code from the internet for any five programs of the C language and convert them to Java. (Palindrome).](#Program12c)
+
+
 
 
 
@@ -589,6 +592,36 @@ class Armstrong {
 }
 ```
 <img width="296" height="145" alt="image" src="https://github.com/user-attachments/assets/52eafa4d-52d7-4095-a4ad-dd09b3f57dd0" />
+
+## Program12c
+```
+import java.util.Scanner;
+
+class Palindrome {
+    public static void main(String[] args) {
+        int n, rev = 0, rem, temp;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        n = sc.nextInt();
+
+        temp = n;
+
+        while (n > 0) {
+            rem = n % 10;
+            rev = rev * 10 + rem;
+            n = n / 10;
+        }
+
+        if (temp == rev)
+            System. out.println("Palindrome Number");
+        else
+            System. out.println("Not a Palindrome Number");
+    }
+}
+```
+<img width="298" height="130" alt="image" src="https://github.com/user-attachments/assets/2379507e-dc12-4359-96ab-79129f7ccdbb" />
+
 
 
 
