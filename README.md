@@ -4,6 +4,9 @@
 
 [Program 3: Write a Program to test for loop, while loop, do while loop. ](#Program3)
 
+[Program 4: Write a Program using if-else to print the grade of input marks.](#Program4)
+
+
 
 ## Program1
 ```
@@ -102,6 +105,36 @@ class LoopTest {
 }
 ```
 <img width="388" height="532" alt="image" src="https://github.com/user-attachments/assets/94e18dc5-3541-4554-b705-ecb20a8c11bb" />
+
+##Program4
+```
+import java.util.Scanner;
+
+class GradeCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System. out.print("Enter marks: ");
+        int marks = sc.nextInt();
+
+        if (marks >= 90) {
+            System.out.println("Grade: A");
+        } else if (marks >= 75) {
+            System.out.println("Grade: B");
+        } else if (marks >= 60) {
+            System.out.println("Grade: C");
+        } else if (marks >= 50) {
+            System.out.println("Grade: D");
+        } else {
+            System.out.println("Grade: F");
+        }
+
+        sc.close();
+    }
+}
+```
+<img width="300" height="182" alt="image" src="https://github.com/user-attachments/assets/9fd034f4-22e3-4f9d-ac94-f10384092e1f" />
+
 
 
 
