@@ -1,3 +1,8 @@
+[Program 1: Create a class with four methods: Addition, Subtraction, Multiplication, and Division. Now, test all four methods in the public static void main. ](#Program1)
+
+
+
+## Program1
 ```
 public class Calc {
         public static void main(String[] args){
