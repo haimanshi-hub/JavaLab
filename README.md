@@ -12,6 +12,9 @@
 
 [Program 7: Write a Program in Java using OOPs concept for the addition of two distances where each distance is given in metres and centimetres.](#Program7)
 
+[Program 8: Write a Program in Java using OOPs concept for the addition of two times, where each time is given in hours and minutes.](#Program8)
+
+
 
 
 
@@ -263,6 +266,54 @@ class Distance {
 }
 ```
 <img width="553" height="245" alt="image" src="https://github.com/user-attachments/assets/afd38f40-8e09-4266-9d1d-1824095db0f5" />
+
+## Program8
+```
+import java.util.Scanner;
+
+class Time {
+    int hours;
+    int minutes;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter hours: ");
+        hours = sc.nextInt();
+        System.out.print("Enter minutes: ");
+        minutes = sc.nextInt();
+    }
+
+    Time add(Time t) {
+        Time sum = new Time();
+        sum.minutes = this.minutes + t.minutes;
+        sum.hours = this.hours + t.hours + sum.minutes / 60; // 60 min = 1 hr
+        sum.minutes = sum.minutes % 60;
+        return sum;
+    }
+
+    void display() {
+        System.out.println("Time = " + hours + " hours and " + minutes + " minutes");
+    }
+
+    public static void main(String[] args) {
+        Time t1 = new Time();
+        Time t2 = new Time();
+
+        System.out.println("Enter first time:");
+        t1.input();
+
+        System.out.println("Enter second time:");
+        t2.input();
+
+        Time sum = t1.add(t2);
+
+        System.out.print("Sum of times: ");
+        sum.display();
+    }
+}
+```
+<img width="441" height="262" alt="image" src="https://github.com/user-attachments/assets/7a427628-7a52-4947-94cb-69b2a0973497" />
+
 
 
 
