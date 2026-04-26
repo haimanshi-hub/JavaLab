@@ -18,6 +18,9 @@
 
 [Program 10: Write a class with four methods for a 1-dimensional array.(Input, output 1,out2, reverse).](#Program10)
 
+[Program 11:  Write a class with multiple methods to perform matrix operations (transpose, addition, sum of rows, sum of columns, sum of diagonal).](#Program11)
+
+
 
 
 
@@ -433,6 +436,103 @@ class OneDArray {
 }
 ```
 <img width="286" height="327" alt="image" src="https://github.com/user-attachments/assets/afc8b620-5a04-4022-b1b6-045f284a409b" />
+
+## Program11
+```
+import java.util.Scanner;
+
+class MatrixOperations {
+    int a[][], b[][];
+    int r, c;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter rows and columns: ");
+        r = sc.nextInt();
+        c = sc.nextInt();
+
+        a = new int[r][c];
+        b = new int[r][c];
+
+        System.out.println("Enter first matrix:");
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                a[i][j] = sc.nextInt();
+            }
+        }
+
+        System.out.println("Enter second matrix:");
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                b[i][j] = sc.nextInt();
+            }
+        }
+    }
+
+    void addition() {
+        System.out.println("Matrix Addition:");
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                System.out.print((a[i][j] + b[i][j]) + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    void transpose() {
+        System.out.println("Transpose of first matrix:");
+        for (int i = 0; i < c; i++) {
+            for (int j = 0; j < r; j++) {
+                System.out.print(a[j][i] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    void sumRows() {
+        System. out.println("Sum of rows:");
+        for (int i = 0; i < r; i++) {
+            int sum = 0;
+            for (int j = 0; j < c; j++) {
+                sum += a[i][j];
+            }
+            System.out.println("Row " + i + ": " + sum);
+        }
+    }
+
+    void sumColumns() {
+        System. out.println("Sum of columns:");
+        for (int j = 0; j < c; j++) {
+            int sum = 0;
+            for (int i = 0; i < r; i++) {
+                sum += a[i][j];
+            }
+            System.out.println("Column " + j + ": " + sum);
+        }
+    }
+
+    void sumDiagonal() {
+        int sum = 0;
+        for (int i = 0; i < r; i++) {
+            sum += a[i][i]; // main diagonal
+        }
+        System.out.println("Sum of diagonal: " + sum);
+    }
+
+    public static void main(String[] args) {
+        MatrixOperations obj = new MatrixOperations();
+        obj.input();
+        obj.addition();
+        obj.transpose();
+        obj.sumRows();
+        obj.sumColumns();
+        obj.sumDiagonal();
+    }
+}
+```
+<img width="623" height="762" alt="image" src="https://github.com/user-attachments/assets/c02dd76f-9477-4e05-bc80-d529f74b1219" />
+
 
 
 
