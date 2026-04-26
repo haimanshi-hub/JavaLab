@@ -30,6 +30,9 @@
 
 [Program 12e:  Collect the code from the internet for any five programs of the C language and convert them to Java. (Pattern).](#Program12e)
 
+[Program 13:  Write a program using three classes to print 1–100, 1–100, 1–100  without a thread, and analyse the output, and repeat the same program using the Runnable interface.](#Program13)
+
+
 
 
 
@@ -670,6 +673,55 @@ class Pattern {
 }
 ```
 <img width="303" height="176" alt="image" src="https://github.com/user-attachments/assets/d02bbfe4-08f5-4adf-81b6-7fcfed0228d3" />
+
+## Program13
+```
+class PrintOneToHundred {
+    void display() {
+        System. out.println("Printing 1 to 100:");
+        for (int i = 1; i <= 100; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+
+class PrintHundredToOne {
+    void display() {
+        System. out.println("Printing 100 to 1:");
+        for (int i = 100; i >= 1; i--) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+
+class PrintOneToHundredAgain {
+    void display() {
+        System. out.println("Printing 1 to 100 again:");
+        for (int i = 1; i <= 100; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        PrintOneToHundred obj1 = new PrintOneToHundred();
+        PrintHundredToOne obj2 = new PrintHundredToOne();
+        PrintOneToHundredAgain obj3 = new PrintOneToHundredAgain();
+
+        obj1.display();
+        obj2.display();
+        obj3.display();
+    }
+}
+```
+<img width="1136" height="600" alt="image" src="https://github.com/user-attachments/assets/e413391d-4072-447a-b574-7fd6aee1b700" />
+
+## Program14
+
 
 
 
