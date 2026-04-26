@@ -10,6 +10,9 @@
 
 [Program 6: Write a Program in Java using objects and classes to get the pyramid of stars or triangle of stars.](#Program6)
 
+[Program 7: Write a Program in Java using OOPs concept for the addition of two distances where each distance is given in metres and centimetres.](#Program7)
+
+
 
 
 
@@ -213,6 +216,54 @@ class PyramidStars {
 }
 ```
 <img width="327" height="185" alt="image" src="https://github.com/user-attachments/assets/0a1e4534-c13a-427b-8ca4-36593a39f67f" />
+
+## Program7
+```
+import java.util.Scanner;
+
+class Distance {
+    int meters;
+    int centimeters;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter meters: ");
+        meters = sc.nextInt();
+        System.out.print("Enter centimeters: ");
+        centimeters = sc.nextInt();
+    }
+
+    Distance add(Distance d) {
+        Distance sum = new Distance();
+        sum.centimeters = this.centimeters + d.centimeters;
+        sum.meters = this.meters + d.meters + sum.centimeters / 100;
+        sum.centimeters = sum.centimeters % 100;  
+        return sum;
+    }
+
+    void display() {
+        System.out.println("Distance = " + meters + " meters and " + centimeters + " centimeters");
+    }
+
+    public static void main(String[] args) {
+        Distance d1 = new Distance();
+        Distance d2 = new Distance();
+
+        System.out.println("Enter first distance:");
+        d1.input();
+
+        System.out.println("Enter second distance:");
+        d2.input();
+
+        Distance sum = d1.add(d2);
+
+        System.out.print("Sum of distances: ");
+        sum.display();
+    }
+}
+```
+<img width="553" height="245" alt="image" src="https://github.com/user-attachments/assets/afd38f40-8e09-4266-9d1d-1824095db0f5" />
+
 
 
 
