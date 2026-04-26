@@ -26,6 +26,9 @@
 
 [Program 12c:  Collect the code from the internet for any five programs of the C language and convert them to Java. (Palindrome).](#Program12c)
 
+[Program 12d:  Collect the code from the internet for any five programs of the C language and convert them to Java. (Fibonacci).](#Program12d)
+
+
 
 
 
@@ -621,6 +624,33 @@ class Palindrome {
 }
 ```
 <img width="298" height="130" alt="image" src="https://github.com/user-attachments/assets/2379507e-dc12-4359-96ab-79129f7ccdbb" />
+
+## Program12d
+```
+import java.util.Scanner;
+
+class Fibonacci {
+    public static void main(String[] args) {
+        int n, a = 0, b = 1, c;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of terms: ");
+        n = sc.nextInt();
+
+        System.out.println("Fibonacci Series:");
+        System.out.print(a + " " + b + " ");
+
+        for (int i = 3; i <= n; i++) {
+            c = a + b;
+            System.out.print(c + " ");
+            a = b;
+            b = c;
+        }
+    }
+}
+```
+<img width="302" height="137" alt="image" src="https://github.com/user-attachments/assets/76bfb919-1d62-4249-88a2-b6d96417f839" />
+
 
 
 
