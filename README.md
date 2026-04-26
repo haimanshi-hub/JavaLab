@@ -32,6 +32,12 @@
 
 [Program 13:  Write a program using three classes to print 1–100, 1–100, 1–100  without a thread, and analyse the output, and repeat the same program using the Runnable interface.](#Program13)
 
+[Program 14:  Write a program using three classes to print 1–100, 1–100, 1–100  with a thread and analyse the output, and repeat the same program using the Runnable interface.](#Program14)
+
+[Program 15:  Using the concept of multithreading, the output of all three threads must be synchronised (use the join method).](#Program15)
+
+
+
 
 
 
@@ -721,6 +727,110 @@ public class Main {
 <img width="1136" height="600" alt="image" src="https://github.com/user-attachments/assets/e413391d-4072-447a-b574-7fd6aee1b700" />
 
 ## Program14
+```
+class ThreadOne extends Thread {
+    public void run() {
+        System. out.println("Thread 1: Printing 1 to 100");
+        for (int i = 1; i <= 100; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+
+class ThreadTwo extends Thread {
+    public void run() {
+        System. out.println("Thread 2: Printing 100 to 1");
+        for (int i = 100; i >= 1; i--) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+
+class ThreadThree extends Thread {
+    public void run() {
+        System. out.println("Thread 3: Printing 1 to 100");
+        for (int i = 1; i <= 100; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        ThreadOne t1 = new ThreadOne();
+        ThreadTwo t2 = new ThreadTwo();
+        ThreadThree t3 = new ThreadThree();
+
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}
+```
+<img width="1143" height="535" alt="image" src="https://github.com/user-attachments/assets/462d3a91-6b5d-413c-af55-6a9ae7b2ff2e" />
+
+## Program15
+```
+class ThreadOne extends Thread {
+    public void run() {
+        System. out.println("Thread 1: Printing 1 to 100");
+        for (int i = 1; i <= 100; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+
+class ThreadTwo extends Thread {
+    public void run() {
+        System. out.println("Thread 2: Printing 100 to 1");
+        for (int i = 100; i >= 1; i--) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+
+class ThreadThree extends Thread {
+    public void run() {
+        System. out.println("Thread 3: Printing 1 to 100");
+        for (int i = 1; i <= 100; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        ThreadOne t1 = new ThreadOne();
+        ThreadTwo t2 = new ThreadTwo();
+        ThreadThree t3 = new ThreadThree();
+
+        try {
+            t1.start();
+            t1.join();   
+
+            t2.start();
+            t2.join();  
+
+            t3.start();
+            t3.join();  
+
+        } catch (InterruptedException e) {
+            System. out.println("Exception: " + e);
+        }
+    }
+}
+```
+<img width="1141" height="582" alt="image" src="https://github.com/user-attachments/assets/b82efa29-d204-4ac8-b6ba-b3cc20584524" />
+
+
 
 
 
