@@ -1,5 +1,7 @@
 [Program 1: Create a class with four methods: Addition, Subtraction, Multiplication, and Division. Now, test all four methods in the public static void main. ](#Program1)
 
+[Program 2: Write a Program in Java using OOPs concept for the addition of two distances where each distance is given in metres, centimetres, and millimeters.](#Program2)
+
 
 
 ## Program1
@@ -32,10 +34,9 @@ public class Calc {
 <img width="398" height="185" alt="image" src="https://github.com/user-attachments/assets/48ff84f1-ad7b-4c7e-a232-a4100538cfd6" />
 
 
-## code-3
+## Program2
 ```
 import java.util.Scanner;
-
 public class DistanceAdd {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -73,5 +74,4 @@ public class DistanceAdd {
 ```
 
 
-## code-4
-```
+
